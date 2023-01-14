@@ -30,8 +30,9 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiply(a, b) {
   let c = a * b;
-  let problem1Array = [c, 'The product of ' + a + ' and ' + b + ' is ' + c + '.'];
-  return problem1Array;
+//   let problem2Array =
+  return [c, 'The product of ' + a + ' and ' + b + ' is ' + c + '.'];
+//   return problem2Array;
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -54,8 +55,14 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a, b, c) {
   let d = a + b + c;
   let e = a * b * c;
-  let problem1Array = [d, e, a + ' and ' + b + ' and ' + c + ' sum to ' + d + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + e + '.'];
-  return problem1Array;
+//   let answer = [
+//   sum (sum(a, b)[0], c)[0],
+//   multiply(multiply(a, b)[0], c)[0],
+//   '4, 7, and 5 sum to 16.',
+//   'The product of 4 and 7 and 5 is 140.'
+// ]
+ return [d, e, a + ' and ' + b + ' and ' + c + ' sum to ' + d + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + e + '.'];
+
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -74,15 +81,22 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
-let testArray = [2, 3, 4]; //eslint-disable-line
+let testArray = [2, 3, 4];
 
-function sumArray(sumArr) { //eslint-disable-line
-
+function sumArray(x) {
+  let mySum = 0;
+  for (let i = 0; i < x.length; i++){
+    mySum = sum(mySum, x[i])[0];
+  }
+  let myArr = `${x[0]},${x[1]},${x[2]} was passed in as an array of numbers, and ${mySum} is their sum.`;
+  return [mySum, myArr];
+// sumAndMultiply(testArray[0], testArray[1], testArray[2]);
+// return [sumAndMultiply(x[0], x[1], x[2])[0], x[0] + ', ' + x[1] + ', ' + x[2] + ' was passed in as an array of numbers, and ' + sumAndMultiply(x[0], x[1], x[2])[0] + ' is their sum.'];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -98,11 +112,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+  let myProd = multArr[0];
+  for (let i = 1; i < multArr.length; i++){
+    myProd = multiply(myProd, multArr[i])[0];
+  }
+  let myArr = `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${myProd}.`;
+  return [myProd, myArr];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
