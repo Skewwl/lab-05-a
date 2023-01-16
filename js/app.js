@@ -30,8 +30,9 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiply(a, b) {
   let c = a * b;
-  let problem1Array = [c, 'The product of ' + a + ' and ' + b + ' is ' + c + '.'];
-  return problem1Array;
+//   let problem2Array =
+  return [c, 'The product of ' + a + ' and ' + b + ' is ' + c + '.'];
+//   return problem2Array;
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -54,8 +55,14 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a, b, c) {
   let d = a + b + c;
   let e = a * b * c;
-  let problem1Array = [d, e, a + ' and ' + b + ' and ' + c + ' sum to ' + d + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + e + '.'];
-  return problem1Array;
+//   let answer = [
+//   sum (sum(a, b)[0], c)[0],
+//   multiply(multiply(a, b)[0], c)[0],
+//   '4, 7, and 5 sum to 16.',
+//   'The product of 4 and 7 and 5 is 140.'
+// ]
+ return [d, e, a + ' and ' + b + ' and ' + c + ' sum to ' + d + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + e + '.'];
+
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -74,6 +81,7 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
+
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(funcArray) { //eslint-disable-line
@@ -100,6 +108,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+
   let x = multiply(multArr[0], multArr[1])[0];
   let y = multiply(multArr[2], x)[0];
   return [y, `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${y}.`];
